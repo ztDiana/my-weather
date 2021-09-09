@@ -325,6 +325,9 @@ body {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  .demo {
+    margin: 0 0 10px 0;
+  }
   .swiper {
     width: 70%;
   }
