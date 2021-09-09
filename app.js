@@ -70,7 +70,7 @@ console.log(array)
 
 // show();
 function show(item){
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${item}&units=metric&APPID=5d066958a60d315387d9492393935c19`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${item}&units=metric&APPID=5d066958a60d315387d9492393935c19`)
     .then(response => response.json())
               .then((data) => {
                     let city=data.name;
@@ -129,7 +129,7 @@ function show(item){
                     
                 });
 }
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=kyiv&units=metric&APPID=5d066958a60d315387d9492393935c19`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=kyiv&units=metric&APPID=5d066958a60d315387d9492393935c19`)
         .then(response => response.json())
                   .then((data) => {
                         let city=data.name;
