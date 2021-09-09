@@ -210,13 +210,14 @@ body {
           box-shadow: 0 0 5px #fff;
 }
 
-.reset {
+.get {
   height: 35px;
   background-color: red;
   font-size: 15px;
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
+  text-shadow: 0 0 5px black;
   border-radius: 10px;
   width: 100px;
   text-align: center;

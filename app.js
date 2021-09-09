@@ -44,33 +44,46 @@ class WeatherSlider {
     };
 }
 
+let form=document.querySelector("form");
+console.log(form);
+
 
 // new WeatherSlider("lviv", "50", "38", "45", "../HOMEWORK-25/images/calendar.png", "38", "42", "cloudy",".swiper-wrapper").render();
 // new WeatherSlider("lviv", "50", "38", "45", "../HOMEWORK-25/images/calendar.png", "38", "42", "cloudy",".swiper-wrapper").render();
-let input=document.querySelector("input");
+let input=document.querySelector(".demo");
 console.log(input) ;
-
+console.log(input.value)
+ 
 let arr
 let array=[]
 console.log(arr);
 
 
-input.addEventListener("change",()=>{
-    arr=input.value
-    console.log(arr);
-    console.log(arr.length)
-    cityArray=arr.split(",")
-    console.log(cityArray)
-    console.log(cityArray.length);
-    cityArray.forEach((item)=>show(item))
-    
+let get=document.querySelector(".get");
+console.log(get);
+get.addEventListener("click", function(e){
+    e.preventDefault();
+    let value=input.value;
+    show()
+
 })
+
+// input.addEventListener("change",()=>{
+//     arr=input.value
+//     console.log(arr);
+//     console.log(arr.length)
+//     cityArray=arr.split(",")
+//     console.log(cityArray)
+//     console.log(cityArray.length);
+//     cityArray.forEach((item)=>show(item))
+    
+// })
 
 console.log(array)
 
 // show();
-function show(item){
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${item}&units=metric&APPID=5d066958a60d315387d9492393935c19`)
+function show(value){
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&APPID=5d066958a60d315387d9492393935c19`)
     .then(response => response.json())
               .then((data) => {
                     let city=data.name;
@@ -129,6 +142,7 @@ function show(item){
                     
                 });
 }
+show("lviv");
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=kyiv&units=metric&APPID=5d066958a60d315387d9492393935c19`)
         .then(response => response.json())
                   .then((data) => {
