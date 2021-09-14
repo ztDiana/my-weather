@@ -108,7 +108,6 @@ function show(value) {
     });
 }
 show("lviv");
-show("london");
 
 let input = document.querySelector(".demo");
 
@@ -166,8 +165,6 @@ new Swiper(".swiper", {
     el: ".swiper-pagination",
     clickable: true,
 
-    type: "bullets",
-
     dynamicBullets: true,
 
     type: "progressbar",
@@ -194,10 +191,12 @@ new Swiper(".swiper", {
   autoHeight: false,
   slidesPerView: "auto",
 
-  wachOverflow: true,
+  hashNavigation: {
+    watchState: true,
+  },
 
   slidesPerGroup: 1,
-  centerSlide: false,
+  centerSlide: true,
 
   loop: false,
 
@@ -212,7 +211,7 @@ new Swiper(".swiper", {
   cubeEffect: {
     slideShadows: true,
     shadow: true,
-    shadowOffset: 50,
-    shadowScale: 0.89,
+    shadowOffset: 20,
+    shadowScale: 0.94,
   },
 });
