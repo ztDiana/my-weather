@@ -14,6 +14,14 @@ let date_month = {
 };
 let month = new Intl.DateTimeFormat("en-us", date_month).format(user_date);
 
+let time_options = {
+  hour12: false,
+  hour: "numeric",
+  minute: "numeric",
+};
+let time_now = new Intl.DateTimeFormat("en-us", time_options).format(user_date);
+console.log(time_now);
+
 class WeatherSlider {
   constructor(
     city,
@@ -36,9 +44,7 @@ class WeatherSlider {
       (this.description = description),
       (this.parent = document.body.querySelector(parent)),
       (this.day = user_date.getDate()),
-      (this.year = user_date.getFullYear()),
-      (this.hour = user_date.getHours()),
-      (this.minute = user_date.getMinutes());
+      (this.year = user_date.getFullYear());
   }
   render() {
     let slider = document.createElement("div");
@@ -53,7 +59,7 @@ class WeatherSlider {
         <span class="year">${this.year}</span>-
         <div class="weekday">${weekday}</div>
         </div>
-        <div class="time">${this.hour}:${this.minute}</div>
+        <div class="time">${time_now}</div>
         <div class="city">${this.city}</div>
         <div class="humidity">Humidity: ${this.humidity}%</div>
         <div class="pressure">Pressure: ${this.pressure} hPa</div>
